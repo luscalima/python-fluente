@@ -1,4 +1,6 @@
-# 01 - Modelo de Dados
+# 1 - Modelo de Dados
+
+## 1.1 Um baralho pythônico
 
 O Modelo de Dados do Python formaliza a interface de elementos que constituem
 a própria linguagem. Quando criamos novas classes, a fim de deixá-las no padrão,
@@ -58,3 +60,32 @@ Apesar da `FrenchDeck` herdar implicitamente da classe `object`, a maior parte d
 sua funcionalidade não é herdada, isso vem do uso do modelo de dados. Ao implementar
 os métodos especiais, a classe `FrenchDeck` se comporta como uma sequência Python padrão,
 podendo assim se beneficiar de recursos centrais da linguagem e da biblioteca padrão
+
+## 1.2 Como os métodos especiais são usados
+
+Os métodos especiais foram feitos para serem chamados pelo interpretador, e não
+diretamente por nosso código, então, mesmo que definamos o `__getitem__` de alguma
+classe, o mais adequado é que o invoquemos com a função `len`. A unica exeção para
+essa convenção é o método `__init__`, que usamos para trabalhar com inicilização
+de classes e super classes.
+
+Outra coisa que podemos fazer com métodos especiais é emular o comportamento numérico
+para nos classes, como por exemplo, a soma (`+`) de dois objetos da classe `Vector`, que
+representa um ponto no espaço de duas dimensões, como mostra o [Exemplo 02](./02_vector.py).
+
+```py
+v1 = Vector(2, 4)
+v2 = Vector(2, 1)
+v1 + v2 # Vector(4, 5)
+
+# A função abs retora o valor absoluto de números inteiros ou a magnetude de um vetor
+v = Vector(3, 4)
+abs(v) # 5.0
+
+# Multiplicação por escalar
+v * 3 # Vector(9, 12)
+abs(v * 3) # 15.0
+```
+
+Perceba que no trecho acima, nenhum método especial que foi implementado na classe
+é chamado diretamente, pois quem fica a cargo disso no momento é interpretador do Python.
