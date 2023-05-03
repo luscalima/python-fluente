@@ -87,6 +87,8 @@ v * 3 # Vector(9, 12)
 abs(v * 3) # 15.0
 ```
 
+### 1.2.1 Sobre strings
+
 Perceba que no trecho acima, nenhum método especial que foi implementado na classe
 é chamado diretamente, pois quem fica a cargo disso no momento é interpretador do Python.
 
