@@ -66,11 +66,11 @@ podendo assim se beneficiar de recursos centrais da linguagem e da biblioteca pa
 Os métodos especiais foram feitos para serem chamados pelo interpretador, e não
 diretamente por nosso código, então, mesmo que definamos o `__getitem__` de alguma
 classe, o mais adequado é que o invoquemos com a função `len`. A unica exeção para
-essa convenção é o método `__init__`, que usamos para trabalhar com inicilização
+essa convenção é o método `__init__`, que usamos para trabalhar com inicialização
 de classes e super classes.
 
 Outra coisa que podemos fazer com métodos especiais é emular o comportamento numérico
-para nos classes, como por exemplo, a soma (`+`) de dois objetos da classe `Vector`, que
+para objetos, como por exemplo, a soma (`+`) de dois objetos da classe `Vector`, que
 representa um ponto no espaço de duas dimensões, como mostra o [Exemplo 02](./02_vector.py).
 
 ```py
