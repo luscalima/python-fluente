@@ -105,3 +105,23 @@ usamos o método especial `__str__` que também deve retornar uma string, que é
 invocado pelo interpretador do Python pelo método `str`. Se por acaso for julgado que
 o retorno de `__repr__` é suficiente, a não implementação de `__str__` resulta na
 chamada de `__repr__` pelo método `str`
+
+### 1.2.2 Sobre booleanos
+
+No Python, qualquer objeto pode ser tratado com `True` ou `False`, desde que esteja
+inserido em um contexto booleano, ou seja, em um contexto em que valor de verdade
+do objeto seja avaliado.
+
+Por padrão, instâncias de classes definidas pelo usuário são avaliadas como `True`.
+Contudo, às vezes queremos dar um tratamento diferente baseado nos valores dos atributos
+internos da instância.
+
+No nosso exemplo, queremos que um objeto de `Vector` seja avaliado como `False` quando
+suas coordenadas forem da orgigem e `True` caso contrário ([linha 25](./02_vector.py#L25)).
+Para isso, definimos o método especial `__bool__`, que deve retornar `True` ou `False`
+e é invocado pelo interpretador explicitamente com o método `bool` ou implicitamente
+quando o objeto está inserido em um contexto booleano.
+
+Para avalição do objeto, primeiro `__bool__` é invocado, caso ele não esteja definido,
+`__len__` é invocado. Caso `__len__` esteja definido, se retornar `0` o objeto é avaliado
+para `False` e um número diferente resulta em `True`.
