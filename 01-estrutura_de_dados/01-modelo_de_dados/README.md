@@ -89,3 +89,17 @@ abs(v * 3) # 15.0
 
 Perceba que no trecho acima, nenhum método especial que foi implementado na classe
 é chamado diretamente, pois quem fica a cargo disso no momento é interpretador do Python.
+
+O método especial `__repr__` é definido para se definir uma representação do nosso
+objeto como uma string. Por padrão, o console do Python mostraria uma instância de `Vector`
+como algo similar a `<Vector object at 0x10e100070>`, mas com o esse método, podemos definir
+de forma pouco ou nada (de preferência) ambígua uma string que represente como seria
+o código fonte necessário para recriar o objeto que tem esse método invocado. Por
+exemplo, uma instância `Vector(1, 2)` seria representada como `"Vector(1, 2)"`. O
+interpretador do Python usa o método `repr` para invocar o método `__repr__`.
+
+Caso queiramos definir uma string mais apropriada para o leitura de usuários finais,
+usamos o método especial `__str__` que também deve retornar uma string, que é
+invocado pelo interpretador do Python pelo método `str`. Se por acaso for julgado que
+o retorno de `__repr__` é suficiente, a não implementação de `__str__` resulta na
+chamada de `__repr__` pelo método `str`
