@@ -2,7 +2,7 @@ from math import hypot
 
 # O método hypot retorna a hipotenusa de um triângulo retângulo, ou seja, calcula
 # o valor da magnetude do vetor formados pelos valores passados como argumento
-# Fórmula da maginatude: |(x, y)| = sqrt(x^2 + y^2)
+# Fórmula da magnetude: |(x, y)| = sqrt(x^2 + y^2)
 
 
 class Vector:
