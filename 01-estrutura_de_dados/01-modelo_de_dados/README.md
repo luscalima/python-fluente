@@ -161,3 +161,9 @@ matemáticas
 | Bit a bit                       | & \| ^ << >> ~                                     | `__and__` `__or__` `__xor__` `__lshift__` `__rshift__` `__invert__`                                                  |
 | Bit a bit reversa               | (operadores bit a bit com os operandos invertidos) | `__rand__` `__ror__` `__rxor__` `__rlshift__` `__rrshift__`                                                          |
 | Atribuição bit a bit aumentada  | &= \|= ^= <⇐ >>=                                   | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
+
+## 1.4 Porque `len` não é um método?
+
+O `len` não é chamado para objetos _built-in_ como método (não somente ele, nenhum método é) no Python por uma questão de eficiência. O tamanho dos objetos _built-in_ é obtido diretamente de um campo em uma estrutura do [C](https://pt.wikipedia.org/wiki/CPython), sem a necessidade de chamar um método. Isso garante que operações comuns, como obter o número de itens em uma coleção, sejam eficientes para tipos básicos como strings, listas, etc.
+
+No entanto, o Python permite que objetos personalizados também funcionem com `len` através do método especial `__len__`. Isso é um equilibrado entre a necessidade de objetos _built-in_ eficientes e a consistência da linguagem. Como diz o princípio: "[Casos especiais não são especiais o bastante para quebrar as regras](https://pt.wikipedia.org/wiki/Zen_de_Python)."
