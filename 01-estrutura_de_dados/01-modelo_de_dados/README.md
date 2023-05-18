@@ -125,3 +125,39 @@ quando o objeto está inserido em um contexto booleano.
 Para avalição do objeto, primeiro `__bool__` é invocado, caso ele não esteja definido,
 `__len__` é invocado. Caso `__len__` esteja definido, se retornar `0` o objeto é avaliado
 para `False` e um número diferente resulta em `True`.
+
+## 1.3 Visão geral do métodos especiais
+
+A [Tabela 01](#tabela-01-nomes-dos-métodos-relacionados-a-utilitários) mostra alguns do métodos especiais do Python separados por categorias.
+
+### Tabela 01: Nomes dos métodos relacionados a utilitários
+
+| Categoria                          | Nomes dos métodos                                                       |
+| ---------------------------------- | ----------------------------------------------------------------------- |
+| Representação de string/bytes      | `__repr__` `__str__` `__format__` `__bytes__` `__fspath__`              |
+| Conversão para número              | `__bool__` `__complex__` `__int__` `__float__` `__hash__` `__index__`   |
+| Emulação de coleções               | `__len__` `__getitem__` `__setitem__` `__delitem__` `__contains__`      |
+| Iteração                           | `__iter__` `__aiter__` `__next__` `__anext__` `__reversed__`            |
+| Execução de chamável ou corrotina  | `__call__` `__await__`                                                  |
+| Gerenciamento de contexto          | `__enter__` `__exit__` `__aexit__` `__aenter__`                         |
+| Criação e destruição de instâncias | `__new__` `__init__` `__del__`                                          |
+| Gerenciamento de atributos         | `__getattr__` `__getattribute__` `__setattr__` `__delattr__` `__dir__`  |
+| Descritores de atributos           | `__get__` `__set__` `__delete__` `__set_name__`                         |
+| Classes base abstratas             | `__instancecheck__` `__subclasscheck__`                                 |
+| Metaprogramação de classes         | `__prepare__` `__init_subclass__` `__class_getitem__` `__mro_entries__` |
+
+A [Tabela 02](#tabela-02-nomes-de-métodos-relacionados-a-operações-numéricas) mostra alguns mostra os métodos especiais relacionados as operações
+matemáticas
+
+### Tabela 02: Nomes de métodos relacionados a operações numéricas
+
+| Categoria do operador           | Símbolos                                           | Nomes de métodos                                                                                                     |
+| ------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Unário numérico                 | - +                                                | `__neg__` `__pos__` `__abs__`                                                                                        |
+| Comparação rica                 | < ⇐ == != > >=                                     | `__lt__` `__le__` `__eq__` `__ne__` `__gt__` `__ge__`                                                                |
+| Aritmético                      | + - \* / // % @ divmod() round() \*\* pow()        | `__add__` `__sub__` `__mul__` `__truediv__` `__floordiv__` `__mod__` `__matmul__` `__divmod__` `__round__` `__pow__` |
+| Aritmética reversa              | (operadores aritméticos com operandos invertidos)  | `__radd__` `__rsub__` `__rmul__` `__rtruediv__` `__rfloordiv__` `__rmod__` `__rmatmul__` `__rdivmod__` `__rpow__`    |
+| Atribuição aritmética aumentada | += -= = /= //= %= @= \*=                           | `__iadd__` `__isub__` `__imul__` `__itruediv__` `__ifloordiv__` `__imod__` `__imatmul__` `__ipow__`                  |
+| Bit a bit                       | & \| ^ << >> ~                                     | `__and__` `__or__` `__xor__` `__lshift__` `__rshift__` `__invert__`                                                  |
+| Bit a bit reversa               | (operadores bit a bit com os operandos invertidos) | `__rand__` `__ror__` `__rxor__` `__rlshift__` `__rrshift__`                                                          |
+| Atribuição bit a bit aumentada  | &= \|= ^= <⇐ >>=                                   | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
