@@ -160,7 +160,7 @@ matemáticas
 | Atribuição aritmética aumentada | += -= = /= //= %= @= \*=                           | `__iadd__` `__isub__` `__imul__` `__itruediv__` `__ifloordiv__` `__imod__` `__imatmul__` `__ipow__`                  |
 | Bit a bit                       | & \| ^ << >> ~                                     | `__and__` `__or__` `__xor__` `__lshift__` `__rshift__` `__invert__`                                                  |
 | Bit a bit reversa               | (operadores bit a bit com os operandos invertidos) | `__rand__` `__ror__` `__rxor__` `__rlshift__` `__rrshift__`                                                          |
-| Atribuição bit a bit aumentada  | &= \|= ^= <<- >>=                                  | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
+| Atribuição bit a bit aumentada  | &= \|= ^= <<= >>=                                  | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
 
 ## 1.4 Porque `len` não é um método?
 
