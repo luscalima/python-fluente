@@ -154,13 +154,13 @@ matemáticas
 | Categoria do operador           | Símbolos                                           | Nomes de métodos                                                                                                     |
 | ------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Unário numérico                 | - +                                                | `__neg__` `__pos__` `__abs__`                                                                                        |
-| Comparação rica                 | < ⇐ == != > >=                                     | `__lt__` `__le__` `__eq__` `__ne__` `__gt__` `__ge__`                                                                |
+| Comparação rica                 | < <= == != > >=                                    | `__lt__` `__le__` `__eq__` `__ne__` `__gt__` `__ge__`                                                                |
 | Aritmético                      | + - \* / // % @ divmod() round() \*\* pow()        | `__add__` `__sub__` `__mul__` `__truediv__` `__floordiv__` `__mod__` `__matmul__` `__divmod__` `__round__` `__pow__` |
 | Aritmética reversa              | (operadores aritméticos com operandos invertidos)  | `__radd__` `__rsub__` `__rmul__` `__rtruediv__` `__rfloordiv__` `__rmod__` `__rmatmul__` `__rdivmod__` `__rpow__`    |
 | Atribuição aritmética aumentada | += -= = /= //= %= @= \*=                           | `__iadd__` `__isub__` `__imul__` `__itruediv__` `__ifloordiv__` `__imod__` `__imatmul__` `__ipow__`                  |
 | Bit a bit                       | & \| ^ << >> ~                                     | `__and__` `__or__` `__xor__` `__lshift__` `__rshift__` `__invert__`                                                  |
 | Bit a bit reversa               | (operadores bit a bit com os operandos invertidos) | `__rand__` `__ror__` `__rxor__` `__rlshift__` `__rrshift__`                                                          |
-| Atribuição bit a bit aumentada  | &= \|= ^= <⇐ >>=                                   | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
+| Atribuição bit a bit aumentada  | &= \|= ^= <<- >>=                                  | `__iand__` `__ior__` `__ixor__` `__ilshift__` `__irshift__`                                                          |
 
 ## 1.4 Porque `len` não é um método?
 
