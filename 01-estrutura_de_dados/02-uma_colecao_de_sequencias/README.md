@@ -4,7 +4,7 @@
 
 Exemplos de sequências da biblioteca padrão do Python:
 
-### Tabela 03: Exemplos de sequências da biblioteca padrão
+#### Tabela 03: Exemplos de sequências da biblioteca padrão
 
 | Tipo de Sequência    | Exemplos                             |
 | -------------------- | ------------------------------------ |
@@ -13,7 +13,7 @@ Exemplos de sequências da biblioteca padrão do Python:
 
 As _sequências contêiner_ guardam referências dos seus valores e as _sequências planas_ propriamente dito e por isso ficam limitadas a valores primitivos (e. g. números e bytes)
 
-### Tabela 04: Agrupamento por mutabilidade
+#### Tabela 04: Agrupamento por mutabilidade
 
 | Tipo de Sequência    | Exemplos                                                |
 | -------------------- | ------------------------------------------------------- |
