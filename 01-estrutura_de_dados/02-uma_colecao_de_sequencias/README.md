@@ -46,6 +46,8 @@ codes = [ord(symbol) for symbol in symbols]
 print(codes) # [36, 162, 163, 165, 8364, 164]
 ```
 
+> A função `ord` retorna o valor inteiro que representa o código Unicode de um caractere especificado. Ela é usada para converter um único caractere em seu equivalente numérico. Ela é útil quando é preciso lidar com manipulação de caracteres baseados em seus códigos numéricos.
+
 O código do [Exemplo 01](#exemplo-01-criando-lista-com-for) usa o laço _for_, que é ambiguo, pois pode ser utilizado para várias finalidades, como por exemplo calcular a somatória de uma sequência de números. Porém, o [Exemplo 02](#exemplo-02-criando-lista-com-compreensão-de-lista) é mais objetivo, pois a compreensão de listas só possui uma única finalidade: criar uma lista.
 
 Contudo, ao abusar desse recurso, o código pode ficar facilmente ilegível. Assim sendo, use compreensão de lista apenas se for usar a lista gerada ou se o código for curto o suficente para caber em duas linhas.
