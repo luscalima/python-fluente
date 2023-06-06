@@ -54,13 +54,13 @@ Contudo, ao abusar desse recurso, o código pode ficar facilmente ilegível. Ass
 
 Compreensões de lista criam listas a partir de sequências ou de qualquer outro tipo iterável, filtrando e transformando os itens.
 
-## 2.3 Tuplas não são apenas lista imutáveis
+## 2.3 Tuplas não são apenas listas imutáveis
 
 Tuplas podem ser usadas de duas formas: (i) como listas imutáveis e (ii) como registros.
 
 ### 2.3.1 Tuplas como registros
 
-Tuplas podem conter registros com valore sem campos, onde seus significados são estabelecidos de acordo com a ordem em que o valor aparece. Portanto, isso implica que a quantidade de valores é fixada em que sua ordem é importante.
+Tuplas podem conter registros com valores sem campos, onde seus significados são estabelecidos de acordo com a posição em que o valor aparece. Portanto, isso implica que a quantidade de valores é fixada e que sua ordem é importante.
 
 #### Exemplo 05: Tuplas como registro
 
@@ -72,20 +72,20 @@ traveler_ids = [('USA', '31195855'), ('BRA', 'CE342567'), ('ESP', 'XDA205856')] 
 
 1. Latitude e longitude do Aeroporto Internacional de Los Angeles.
 1. Dados sobre Tóquio: nome, ano, população (em milhares), crescimento populacional (%) e área (km²).
-1. Uma lista de tuplas no formato (código_de_país, número_do_passaporte).
+1. Uma lista de tuplas no formato (código do país, número do passaporte).
 
-Mas muitas vezes não é preciso se dar ao trabalho de criar uma classe apenas para nomear os campos. No [Exemplo 5](#exemplo-05-tuplas-como-registro), foi atribuído `('Tokyo', 2003, 32_450, 0.66, 8014)` a `city`, `year`, `pop`, `chg`, `area` em um único comando.
+Mas muitas vezes não é necessário criar uma classe apenas para nomear os campos. No [Exemplo 5](#exemplo-05-tuplas-como-registro), foi atribuído `('Tokyo', 2003, 32_450, 0.66, 8014)` a `city`, `year`, `pop`, `chg`, `area` em um único comando.
 
 ### 2.3.2 Tuplas como listas imutáveis
 
-Existem duas vantagens em usar tuplas (`tuple`) como lista imutáveis:
+Existe duas vantagens em usar tuplas (`tuple`) como lista imutáveis:
 
 - **Clareza**: imediatamente é sabido que uma `tuple` no código nunca mudará de tamanho.
-- **Desempenho**: uma `tuple` é mais perfomáticas que uma `list`.
+- **Desempenho**: uma `tuple` é mais perfomática que uma `list`.
 
 > **Importante**: a imutabilidade de uma `tuple` só se aplica a suas referências diretas, ou seja, caso uma referência aponte para um outro objeto mutável, e esse tenha seu valor alterado, o valor da `tuple` mudará, porém aquela referência nunca poderá ser apagada ou modificada.
 
-Uma `tuple` com valores mutáveis pode ser fonte de _bugs_, caso seja usada como chave de um dicionário (`dict`) ou valor de um conjunto (`set`), por exemplo, já que seu valor é volátil. Para definir explicitamente se um `tuple` é volátil ou não, em termos de valor, é possível usar função _built-in_ `hash`.
+Uma `tuple` com valores mutáveis pode ser fonte de _bugs_, caso seja usada como chave de um dicionário (`dict`) ou valor de um conjunto (`set`), por exemplo, já que seu valor é volátil. Para definir explicitamente se um `tuple` é volátil ou não, em termos de valor, é possível usar a função _built-in_ `hash`.
 
 ```py
 def fixed(o):
@@ -101,10 +101,10 @@ fixed(tf) # True
 fixed(tm) # False
 ```
 
-> **Sobre `hash`**: A função `hash` é usada para calcular o valor hash de um objeto. O valor _hash_ é um número inteiro que é usado para identificar exclusivamente o objeto durante uma sessão de execução do programa. Essa funçnao aceita um único argumento, que pode ser um objeto de qualquer tipo imutável. Objetos com valores mutáveis, como listas e dicionários, não podem ser usados como argumentos.
+> **Sobre `hash`**: A função `hash` é usada para calcular o valor hash de um objeto. O valor _hash_ é um número inteiro que é usado para identificar exclusivamente o objeto durante uma sessão de execução do programa. Essa função aceita um único argumento, que pode ser um objeto de qualquer tipo imutável. Objetos com valores mutáveis, como listas e dicionários, não podem ser usados como argumentos.
 
 Apesar dessa resalva, abaixo é mostrado algumas vantagens em usar `tuple` como `list` imutável.
 
 - Para avaliar uma `tuple`, o interpretador Python gera _bytecode_ para uma constante, mas para uma `list`, o _bytecode_ gerado insere cada elemento como uma constante separada no _stack_ de dados, e então cria a lista.
 - Dada uma `tuple` `t`, `tuple(t)` devolve uma referência para a mesma `t`. Não há necessidade de cópia. Por outro lado, dada uma `list` `l`, o construtor `list(l)` precisa criar uma nova cópia de `l`.
-- Devido a seu tamanho fixo, uma instância de `tuple` tem alocado para si o espaço exato de memória que precisa. Já uma instâncias de `list` tem memória adicional alocada, para amortizar o custo de acréscimos futuros.
+- Devido a seu tamanho fixo, uma instância de `tuple` tem alocado para si o espaço exato de memória que precisa. Já uma instância de `list` tem memória adicional alocada, para amortizar o custo de acréscimos futuros.
